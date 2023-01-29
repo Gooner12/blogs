@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Inner HTML</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="container__heading">Inner HTML</h3>
+      <p class="container__text" id="content">
+        <span class="container__highlight">Lorem</span> <em>ipsum</em>
+        <strong>dolor</strong> <u>sit</u> <em>amet</em>,
+        <strong>consectetur</strong> <em>adipiscing</em> elit,
+        <span class="container__highlight">sed</span> do eiusmod
+        <em>tempor</em> <strong>incididunt</strong> ut <u>labore</u>
+        <em>et</em> <strong>dolore</strong>
+        <span class="container__highlight">magna</span> <em>aliqua</em>. Ut
+        <span class="container__highlight">enim</span> ad <em>minim</em>
+        <strong>veniam</strong>, <em>quis</em> nostrud <em>exercitation</em>
+        <strong>ullamco</strong> laboris <strong>nisi</strong>
+        <em>ut</em> aliquip ex <em>ea</em> <strong>commodo</strong>
+        <u>consequat</u>. <strong>Duis</strong> aute irure <em>dolor</em> in
+        <em>reprehenderit</em> in <strong>voluptate</strong> velit esse
+        <em>cillum</em> dolore eu fugiat <em>nulla</em> pariatur.
+        <strong>Excepteur</strong> sint
+        <span class="container__highlight">occaecat</span>
+        <em>cupidatat</em> non <strong>proident</strong>, sunt in
+        <strong>culpa</strong> qui <em>officia</em> deserunt
+        <strong>mollit</strong> anim id <strong>est</strong> laborum. Sed ut
+        <em>perspiciatis</em> unde omnis iste <em>natus</em> error sit
+        <u>voluptatem</u> accusantium <strong>doloremque</strong> laudantium,
+        <strong>totam</strong> rem aperiam, <em>eaque</em> ipsa quae ab
+        <span class="container__highlight">illo</span>
+        <strong>inventore</strong> veritatis et <strong>quasi</strong>
+        <strong>architecto</strong> beatae
+        <span class="container__highlight">vitae</span> <em>dicta</em> sunt
+        <strong>explicabo</strong>. Nemo enim <em>ipsam</em>
+        <strong>voluptatem</strong> quia <em>voluptas</em> sit
+        <em>aspernatur</em> <strong>aut</strong> odit aut fugit, sed quia
+        <em>consequuntur</em> magni <em>dolores</em> eos <em>qui</em> ratione
+        <em>voluptatem</em> sequi nesciunt. <strong>Neque</strong> porro
+        <span class="container__highlight">quisquam</span> est, qui dolorem
+        <em>ipsum</em> quia <strong>dolor</strong> sit amet, consectetur,
+        <em>adipisci</em> velit, <strong>sed</strong> quia non
+        <em>numquam</em> eius <strong>modi</strong> tempora incidunt ut
+        <strong>labore</strong> et
+        <span class="container__highlight">dolore</span>
+        <strong>magnam</strong> aliquam <em>quaerat</em>
+        <strong>voluptatem</strong>. <strong>Ut</strong> enim <em>ad</em> minima
+        <strong>veniam</strong>, <u>quis</u> <em>nostrum</em>
+        <span class="container__highlight">exercitationem</span>
+        <em>ullam</em> <strong>corporis</strong> suscipit
+        <strong>laboriosam</strong>, <em>nisi</em> <strong>ut</strong> aliquid
+        <em>ex</em> ea commodi <em>consequatur?</em> <strong>Quis</strong>
+        <em>autem</em> <strong>vel</strong> eum iure
+        <strong>reprehenderit</strong> qui in <em>ea</em>
+        <strong>voluptate</strong> <em>velit</em> esse
+        <strong>quam</strong> nihil <strong>molestiae</strong>
+        <u>consequatur</u>, <em>vel</em> illum qui <strong>dolorem</strong> eum
+        <em>fugiat</em> quo <em>voluptas</em> nulla
+        <strong>pariatur?</strong>
+      </p>
+      </div>
+    </div>
+    <div class="chart-container">
+      <svg width="900" height="220" class="chart-container chart-container__graph" id="bar-chart"></svg>
+    </div>
+    <div class="button-container">
+      <button id="comparator"
+            class="button-container__compare button-container__compare--styled"
+          >
+            Compare Performance
+          </button>
+    </div>
+    <script type="module" src="./working.js"></script>
+    <script type="module" src="./comparisonGraph.js"></script>
+  </body>
+</html>
