@@ -72,7 +72,7 @@ const render = (data, paint) => {
       .attr("y", (d) => yScale(yValue(d)) + 16)
       .text((d) => {
         if (d.time !== null) {
-          return d.time.toFixed(2) + "\u00b5s";
+          return d.time.toFixed(0) + "\u00b5s";
         }
         return "";
       })

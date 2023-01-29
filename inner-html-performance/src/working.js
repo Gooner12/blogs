@@ -13,7 +13,6 @@ mixButton.addEventListener("click", useMix);
 removeButton.addEventListener("click", removeAuthor);
 
 function useInnerHtml() {
-  // removeAuthor();
   const element = document.getElementById("content");
   const authorMarkup =
     "<span id='author-name'><em><strong>-Lorem Ipsum</strong></em></span>";
@@ -23,18 +22,10 @@ function useInnerHtml() {
   const end = performance.now();
   const timeElapsed = (end - start) * 1000;
   performanceData[0].time = timeElapsed;
-  // making the elpased time fit to the width of the bar chart
-  const xScale = render(performanceData, false);
-  d3.select(".Inner.HTML")
-    .transition()
-    .ease(d3.easeLinear)
-    .duration(Math.min(timeElapsed, 1000))
-    .attr("width", xScale(timeElapsed));
-  setTimeout(() => {render(performanceData, true)}, Math.min(timeElapsed, 1000));
+  barPainter(".Inner.HTML", timeElapsed);
 }
 
 function useNewElement() {
-  // removeAuthor();
   const element = document.getElementById("content");
   const span = document.createElement("span");
   span.id = "author-name";
@@ -49,17 +40,10 @@ function useNewElement() {
   const end = performance.now();
   const timeElapsed = (end - start) * 1000;
   performanceData[1].time = timeElapsed;
-  const xScale = render(performanceData, false);
-  d3.select(".Create.Element")
-    .transition()
-    .ease(d3.easeLinear)
-    .duration(timeElapsed)
-    .attr("width", xScale(timeElapsed));
-  setTimeout(() => {render(performanceData, true)}, timeElapsed);
+  barPainter(".Create.Element", timeElapsed);
 }
 
 function useMix() {
-  // removeAuthor();
   const element = document.getElementById("content");
   const authorMarkup = "<em><strong>-Lorem Ipsum</strong></em>";
   const span = document.createElement("span");
@@ -71,13 +55,7 @@ function useMix() {
   const end = performance.now();
   const timeElapsed = (end - start) * 1000;
   performanceData[2].time = timeElapsed;
-  const xScale = render(performanceData, false);
-  d3.select(".Mix")
-    .transition()
-    .ease(d3.easeLinear)
-    .duration(timeElapsed)
-    .attr("width", xScale(timeElapsed));
-  setTimeout(() => {render(performanceData, true)}, timeElapsed);
+  barPainter(".Mix", timeElapsed);
 }
 
 function removeAuthor() {
@@ -87,5 +65,16 @@ function removeAuthor() {
   element.removeChild(authorElement);
   }
   return;
+}
+
+function barPainter(className, time) {
+  // making the elapsed time fit to the width of the bar chart
+  const xScale = render(performanceData, false);
+  d3.select(className)
+    .transition()
+    .ease(d3.easeLinear)
+    .duration(Math.min(time, 1000))
+    .attr("width", xScale(time));
+  setTimeout(() => {render(performanceData, true)}, Math.min(time, 1000));
 }
 
