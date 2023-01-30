@@ -1,15 +1,17 @@
 import performanceData from "./data.js";
 const data = performanceData;
 
-const svg = d3.select("svg");
+// const svg = d3.select("svg");
+const svg = d3.select("#chart").append("svg").attr("viewBox", "0 0 700 220").attr("width", 700).attr("height", 220).attr("preserveAspectRatio", "xMinYMin meet");
 const width = svg.attr("width");
 const height = svg.attr("height");
+console.log(width, height);
 
 // paints out the bars of the chart
 const render = (data, paint) => {
   const xValue = (d) => d.time;
   const yValue = (d) => d.method;
-  const margin = { top: 20, left: 200, bottom: 50, right: 80 };
+  const margin = { top: 20, left: 97, bottom: 40, right: 75 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -72,6 +74,7 @@ const render = (data, paint) => {
       .append("text")
       .attr("x", (d) => xScale(xValue(d)) + 5)
       .attr("y", (d) => yScale(yValue(d)) + 16)
+      .transition().delay(400)
       .text((d) => {
         if (d.time !== null) {
           return d.time.toFixed(0) + "\u00b5s";
