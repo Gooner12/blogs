@@ -69,14 +69,3 @@ function removeAuthor() {
   return;
 }
 
-function barPainter(className, time) {
-  // making the elapsed time fit to the width of the bar chart
-  const xScale = render(performanceData, false);
-  d3.select(className)
-    .transition()
-    .ease(d3.easeLinear)
-    .duration(Math.min(time, 1000))
-    .attr("width", xScale(time));
-  setTimeout(() => {render(performanceData, true)}, Math.min(time, 1000));
-}
-
